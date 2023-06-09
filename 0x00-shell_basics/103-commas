@@ -1,2 +1,2 @@
-#1/bin/bash
-ls X-amp
+#!/bin/bash
+ls -xamp
