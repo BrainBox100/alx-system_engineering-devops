@@ -1,3 +1,11 @@
 #!/bin/bash
-find -type f -name "*.git" | rev | cut -d "/" -f 1 | cut -d '.
-'2- | rev | LC_ALL=C sort -f
+
+# Find all files with .gif extension, including hidden files
+files=$(find . -type f -name '*.gif' -printf '%P\n')
+
+# Filter for regular files only and remove extension
+filtered_files=$(echo "$files" | sed -e 's/\.gif$//' | sort -f)
+
+# Display the sorted file names
+echo "$filtered_files"
+
